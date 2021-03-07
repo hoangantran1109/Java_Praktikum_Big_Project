@@ -2,6 +2,7 @@
 # Die Robo Rally
 Der Lockeren Lilien
 Features
+- Für Download Jarfile : https://drive.google.com/drive/u/0/folders/17IqWDHvvZBKTgHA0tN-YLin-6zFc_wv7
 - Der Server verwendet grundsätzlich die Portnummer 7070
 - Dem Client können beim starten des Jar-files optional bis zu drei Argumente übergeben werden in dem Muster: „java -jar .\Client -h localhost -p Portnummer -u ki“
 - Zum Test mit einen anderem Server wird wahrscheinlich die entsprechende Portnummer übergeben werden müssen
