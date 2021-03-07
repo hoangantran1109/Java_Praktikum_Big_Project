@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="chatPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ChatGUIController">
+    <opaqueInsets>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+    </opaqueInsets>
+   <Group layoutX="5.0" layoutY="6.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="6.0">
+      <children>
+         <GridPane fx:id="chatGridPane">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Pane GridPane.columnIndex="2">
+                  <children>
+                      <Button fx:id="sendButton" alignment="CENTER" contentDisplay="CENTER" layoutY="563.0" mnemonicParsing="false" onAction="#setSendButton" prefHeight="30.0" prefWidth="85.0" text="Send" />
+                      <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#setExitButton" prefHeight="30.0" prefWidth="85.0" text="Exit" />
+                      <Button fx:id="readyToPlay" alignment="CENTER" contentDisplay="CENTER" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#readyToPlayButtonPressed" prefHeight="30.0" prefWidth="85.0" text="ready to play" />
+                      <Button fx:id="chooseAMap" alignment="CENTER" contentDisplay="CENTER" layoutY="127.0" mnemonicParsing="false" onAction="#chooseAMapAction" prefHeight="30.0" prefWidth="85.0" text="Map" />
+                  </children>
+               </Pane>
+               <Pane GridPane.columnIndex="1">
+                  <children>
+                      <TextArea fx:id="chatArea" editable="false" layoutY="36.0" prefHeight="526.0" prefWidth="450.0" />
+                      <TextField fx:id="chatField" layoutY="563.0" prefHeight="37.0" prefWidth="450.0" />
+                      <Label alignment="TOP_CENTER" layoutX="44.0" prefHeight="17.0" prefWidth="302.0" text="llServer-Version1" textOverrun="CLIP" />
+                  </children>
+               </Pane>
+               <Pane>
+                  <children>
+                      <TextArea fx:id="userList" editable="false" layoutY="36.0" prefHeight="526.0" prefWidth="150.0" />
+                      <Label fx:id="userName" layoutX="9.0" layoutY="564.0" prefHeight="17.0" prefWidth="96.0">
+                          <font>
+                          <Font name="System Bold" size="18.0" />
+                          </font>
+                      </Label>
+                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" prefHeight="17.0" prefWidth="89.0" text="Online User" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
+                  </children>
+               </Pane>
+            </children>
+         </GridPane>
+      </children>
+   </Group>
+</AnchorPane>

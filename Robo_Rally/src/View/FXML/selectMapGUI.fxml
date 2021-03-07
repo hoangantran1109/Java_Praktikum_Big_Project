@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SelectMapController">
+   <ComboBox fx:id="selectMap" layoutX="15.0" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" promptText="Select a Map" />
+   <Button fx:id="sendMapToServer" layoutX="15.0" layoutY="78.0" mnemonicParsing="false" onAction="#sendMap" prefHeight="25.0" prefWidth="150.0" text="Send selected Map" />
+   <TextArea fx:id="infoArea" editable="false" layoutX="15.0" layoutY="26.0" prefHeight="130.0" prefWidth="150.0" visible="false" wrapText="true">
+      <font>
+         <Font name="Arial Bold" size="14.0" />
+      </font></TextArea>
+</Pane>

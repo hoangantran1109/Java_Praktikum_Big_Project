@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="gamePane" prefHeight="804.0" prefWidth="984.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.GameGUIController">
+    <Group fx:id="gameBoardGroup" layoutX="3.292893171310425" layoutY="3.292893171310425"
+           AnchorPane.leftAnchor="3.2928932309150696" AnchorPane.rightAnchor="-3.0"
+           AnchorPane.topAnchor="3.2928932309150696">
+        <children>
+            <GridPane fx:id="gameBoard" gridLinesVisible="true" layoutX="0.7071068286895752"
+                      layoutY="0.7071068286895752" onMouseClicked="#selectStartPosition" prefHeight="498.0"
+                      prefWidth="717.0">
+            </GridPane>
+        </children>
+    </Group>
+    <Group layoutX="760.0" layoutY="12.0" AnchorPane.bottomAnchor="284.0" AnchorPane.rightAnchor="8.0"
+           AnchorPane.topAnchor="12.0">
+        <GridPane fx:id="rightGridPane">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Pane prefHeight="90.0" prefWidth="218.0">
+                    <children>
+                        <Label fx:id="currentPlayer" layoutY="45.0" prefHeight="20.0" prefWidth="216.0"
+                               text="activePlayerName">
+                            <font>
+                                <Font name="System Bold Italic" size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="playerName" layoutY="25.0" prefHeight="20.0" prefWidth="216.0"
+                               text="playerName">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="currentPhase" layoutY="66.0" prefHeight="20.0" prefWidth="216.0"
+                               text="Current Phase">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <CheckBox fx:id="clickMusic" layoutY="6.0" mnemonicParsing="false"
+                                  onMouseClicked="#clickedMuteMusic" prefHeight="17.0" prefWidth="62.0"
+                                  text="Music"/>
+                    </children>
+                </Pane>
+                <ScrollPane fx:id="messageScrollPane" prefHeight="418.0" prefWidth="245.0" GridPane.rowIndex="1">
+                    <TextFlow fx:id="gameMessagesDisplay" layoutX="674.0" layoutY="110.0" prefHeight="416.0"
+                              prefWidth="228.0"/>
+                </ScrollPane>
+            </children>
+        </GridPane>
+    </Group>
+    <Group fx:id="bottomGroup" layoutX="3.0" layoutY="510.0" AnchorPane.bottomAnchor="0.0"
+           AnchorPane.rightAnchor="-3.0">
+        <children>
+          <GridPane fx:id="bottomGridPane" layoutY="4.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+              </rowConstraints>
+              <children>
+                  <Pane prefHeight="279.0" prefWidth="133.0">
+                      <children>
+                          <Label fx:id="yourRobotLabel" layoutX="9.0" prefHeight="17.0" prefWidth="100.0"
+                                 text="Your Robot:"/>
+                          <Pane fx:id="robotImagePane" layoutX="9.0" layoutY="22.0" prefHeight="72.0"
+                                prefWidth="100.0"/>
+                          <Label layoutX="9.0" layoutY="94.0" text="Energy Cubes :"/>
+                          <Label fx:id="energyCubes" layoutX="95.0" layoutY="94.0"/>
+                          <Label fx:id="checkpointsReached" layoutX="9.0" layoutY="139.0"
+                                 text="Checkpoints Reached :"/>
+                          <GridPane fx:id="checkpointGridPane" disable="true" layoutX="9.0" layoutY="162.0"
+                                    prefHeight="60.0" prefWidth="100.0">
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                              </rowConstraints>
+                          </GridPane>
+                          <Label fx:id="cardInDeck" layoutX="9.0" layoutY="114.0" prefHeight="25.0" prefWidth="113.0"
+                                 text="Cards In Deck :"/>
+                      </children>
+                  </Pane>
+                  <Pane GridPane.columnIndex="1">
+                      <children>
+                          <Pane fx:id="controlWindow" layoutY="10.0" prefHeight="30.0" prefWidth="481.0">
+                              <children>
+                                  <Label fx:id="controlPanel" alignment="CENTER" layoutX="2.0" layoutY="-10.0"
+                                         prefHeight="50.0" prefWidth="481.0" text="Controls" textAlignment="CENTER"
+                                         textFill="#01a107" textOverrun="CENTER_ELLIPSIS">
+                                      <font>
+                                          <Font size="18.0"/>
+                                      </font>
+                                  </Label>
+                              </children>
+                          </Pane>
+                          <Pane layoutY="27.0" prefHeight="142.0" prefWidth="313.0">
+                              <children>
+                                  <GridPane fx:id="programmingCards" gridLinesVisible="true" layoutX="2.0"
+                                            layoutY="48.0" onMouseClicked="#clickProgrammingCardsGrid"
+                                            prefHeight="90.0" prefWidth="310.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                      </rowConstraints>
+                                  </GridPane>
+                              </children>
+                          </Pane>
+                          <Pane layoutX="0.5" layoutY="173.5">
+                              <children>
+                                  <GridPane fx:id="allCards" gridLinesVisible="true" layoutX="0.5" layoutY="0.5"
+                                            onMouseClicked="#clickAllCardsGrid" prefHeight="90.0" prefWidth="558.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints fx:id="zero" hgrow="SOMETIMES" minWidth="10.0"
+                                                             prefWidth="100.0"/>
+                                          <ColumnConstraints fx:id="one" hgrow="SOMETIMES" minWidth="10.0"
+                                                             prefWidth="100.0"/>
+                                          <ColumnConstraints fx:id="two" hgrow="SOMETIMES" minWidth="10.0"
+                                                             prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                      </rowConstraints>
+                                  </GridPane>
+                              </children>
+                          </Pane>
+                          <Pane layoutX="319.0" layoutY="52.0" prefHeight="107.0" prefWidth="453.0">
+                              <children>
+                                  <Label fx:id="timerCountdown" prefHeight="94.0" prefWidth="100.0"
+                                         text="timercountdown" textFill="#eb0909">
+                                      <font>
+                                          <Font name="System Bold" size="24.0"/>
+                                      </font>
+                                  </Label>
+                                  <GridPane fx:id="damageCards" layoutX="180.0" layoutY="9.0"
+                                            onMouseClicked="#clickDamageCardsGrid" prefHeight="90.0"
+                                            prefWidth="257.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                      </rowConstraints>
+                                  </GridPane>
+                              </children>
+                          </Pane>
+                          <Pane layoutX="559.0" layoutY="174.0" prefHeight="109.0" prefWidth="297.0">
+                              <children>
+                                  <Button fx:id="playItButton" layoutX="206.0" layoutY="30.0" mnemonicParsing="false"
+                                          onAction="#clickSendPlayIt" prefHeight="25.0" prefWidth="78.0"
+                                          text="Play It!"/>
+                                  <TextArea fx:id="playItTextArea" editable="false" prefHeight="90.0"
+                                            prefWidth="206.0"/>
+                              </children>
+                          </Pane>
+                      </children>
+                  </Pane>
+              </children>
+          </GridPane>
+        </children>
+    </Group>
+</AnchorPane>
