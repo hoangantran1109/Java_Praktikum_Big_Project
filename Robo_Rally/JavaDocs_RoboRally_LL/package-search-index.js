@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"BoardTiles"},{"l":"ClientServer"},{"l":"DamageCards"},{"l":"DecksAndPiles"},{"l":"GameLogic"},{"l":"MessageObjects"},{"l":"ProgrammingCards"},{"l":"View"}];updateSearchResults();
